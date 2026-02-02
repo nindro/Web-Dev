@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  padding: 60px;
+  text-align: center;
+  background: #f6f8fa;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.pricing {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #d0d7de;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.addons {
+  padding: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.addon {
+  border: 1px solid #d0d7de;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
