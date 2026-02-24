@@ -1,0 +1,21 @@
+<div class="categories-container">
+  @for (cat of categories; track cat.id) {
+    <button (click)="selectCategory(cat.id)" [class.active]="selectedCategoryId === cat.id"class="category-btn">
+      {{ cat.name }}
+    </button>
+  }
+</div>
+
+<hr>
+
+<main>
+  @if (selectedProducts.length > 0) {
+    <app-product-list [products]="selectedProducts"></app-product-list>
+  } 
+  @else {
+    <div class="welcome-msg">
+      <h2>Добро пожаловать в магазин!</h2>
+      <p>Выберите категорию выше, чтобы просмотреть товары.</p>
+    </div>
+  }
+</main>

@@ -1,0 +1,10 @@
+.like-btn{
+    transition: transform 0.2s ease;
+}
+.like-btn:active {
+    transform: scale(1.2);
+}
+.liked{
+    color: #e74c3c;
+    border-color: #e74c3c;
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 import { ProductCard } from '../product-card/product-card';
@@ -8,8 +8,9 @@ import { ProductCard } from '../product-card/product-card';
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
+
 export class ProductList {
-  products: Product[] = [
+  @Input() products: Product[] = [
     {
       id: 1,
     name: 'Apple iPhone 15 Pro 256GB',
@@ -17,7 +18,9 @@ export class ProductList {
     price: 699000,
     rating: 4.8,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/h16/hb1/86303746097182.jpg?format=gallery-medium', 
-    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-256gb-chernyi-113138191'
+    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-256gb-chernyi-113138191',
+    likes: 0,
+    categoryId: 1,
   },
   {
     id: 2,
@@ -26,7 +29,9 @@ export class ProductList {
     price: 649000,
     rating: 4.7,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/h10/h86/86596353359902.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-128gb-dual-esim-chernyi-121701465'
+    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-128gb-dual-esim-chernyi-121701465',
+    likes: 0,
+    categoryId: 1,
   },
   {
     id: 3,
@@ -35,7 +40,9 @@ export class ProductList {
     price: 799000,
     rating: 4.9,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/h18/h9e/86302548066334.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-512gb-belyi-113138293'
+    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-512gb-belyi-113138293',
+    likes: 0,
+    categoryId: 1,
   },
   {
     id: 4,
@@ -44,7 +51,9 @@ export class ProductList {
     price: 11990,
     rating: 4.5,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/hd9/h5e/63782061080606.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/wi-fi-adapter-tp-link-archer-t2u-nano-7600532'
+    link: 'https://kaspi.kz/shop/p/wi-fi-adapter-tp-link-archer-t2u-nano-7600532',
+    likes: 0,
+    categoryId: 5,
   },
   {
     id: 5,
@@ -53,7 +62,9 @@ export class ProductList {
     price: 24990,
     rating: 4.4,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/p0c/p43/13892013.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/ruchnoi-shtativ-ulanzi-u-rig-pro-102814348'
+    link: 'https://kaspi.kz/shop/p/ruchnoi-shtativ-ulanzi-u-rig-pro-102814348',
+    likes: 0,
+    categoryId: 5,
   },
   {
     id: 6,
@@ -62,7 +73,9 @@ export class ProductList {
     price: 15990,
     rating: 4.2,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/p07/p80/70153668.png?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/chehol-727-dlja-apple-iphone-14-plus-bezhevyi-147243195'
+    link: 'https://kaspi.kz/shop/p/chehol-727-dlja-apple-iphone-14-plus-bezhevyi-147243195',
+    likes: 0,
+    categoryId: 5,
   },
   {
     id: 7,
@@ -71,7 +84,9 @@ export class ProductList {
     price: 829000,
     rating: 4.9,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/ha3/hda/86319874048030.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-max-256gb-seryi-113138420'
+    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-max-256gb-seryi-113138420',
+    likes: 0,
+    categoryId: 1,
   },
   {
     id: 8,
@@ -80,7 +95,9 @@ export class ProductList {
     price: 7990,
     rating: 4.7,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/h9f/h9c/86461834395678.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/golovolomka-toysib-gotovimsja-k-shkole-121101914'
+    link: 'https://kaspi.kz/shop/p/golovolomka-toysib-gotovimsja-k-shkole-121101914',
+    likes: 0,
+    categoryId: 5,
   },
   {
     id: 9,
@@ -89,7 +106,9 @@ export class ProductList {
     price: 599000,
     rating: 4.6,
     image: 'https://resources.cdn-kaspi.kz/img/m/p/h01/h5f/86303746293790.jpg?format=gallery-medium',
-    link: 'https://kaspi.kz/shop/p/apple-iphone-15-128gb-goluboi-113137929'
+    link: 'https://kaspi.kz/shop/p/apple-iphone-15-128gb-goluboi-113137929',
+    likes: 0,
+    categoryId: 1,
   },
   {   
       id: 10,
@@ -98,7 +117,12 @@ export class ProductList {
       price: 699000,
       rating: 4.8,
       image: 'https://resources.cdn-kaspi.kz/img/m/p/p24/p88/64170090.png?format=gallery-medium',
-      link: 'https://kaspi.kz/shop/p/apple-iphone-17-pro-max-256gb-oranzhevyi-145468241/?c=750000000'
+      link: 'https://kaspi.kz/shop/p/apple-iphone-17-pro-max-256gb-oranzhevyi-145468241/?c=750000000',
+      likes: 0,
+    categoryId: 1,
   },
-  ]
+  ];
+  handleRemove(id: number){
+  this.products = this.products.filter(p => p.id !== id);
+}
 }
