@@ -24,5 +24,6 @@ export class App {
   selectCategory(id: number){
     this.selectedCategoryId = id;
     this.selectedProducts = this.productService.getProductsByCategory(id);
+    console.log(this.categories);
   }
 }

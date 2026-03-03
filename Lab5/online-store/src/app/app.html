@@ -1,21 +1,30 @@
-<div class="categories-container">
-  @for (cat of categories; track cat.id) {
-    <button (click)="selectCategory(cat.id)" [class.active]="selectedCategoryId === cat.id"class="category-btn">
-      {{ cat.name }}
-    </button>
-  }
+<div class="app-container">
+  
+  <header class="main-header">
+    <h1 class="logo">Kaspi Store</h1>
+    
+    <nav class="categories-nav">
+      @for (cat of categories; track cat.id) {
+        <button 
+          (click)="selectCategory(cat.id)" 
+          [class.active]="selectedCategoryId === cat.id"
+          class="category-btn">
+          {{ cat.name }}
+        </button>
+      }
+    </nav>
+  </header>
+
+  <main class="content-area">
+    @if (selectedCategoryId) {
+      <app-product-list [products]="selectedProducts"></app-product-list>
+    } @else {
+      <div class="welcome-message">
+        <div class="icon">🛍️</div>
+        <h2>Добро пожаловать!</h2>
+        <p>Пожалуйста, выберите категорию выше, чтобы просмотреть товары.</p>
+      </div>
+    }
+  </main>
+
 </div>
-
-<hr>
-
-<main>
-  @if (selectedProducts.length > 0) {
-    <app-product-list [products]="selectedProducts"></app-product-list>
-  } 
-  @else {
-    <div class="welcome-msg">
-      <h2>Добро пожаловать в магазин!</h2>
-      <p>Выберите категорию выше, чтобы просмотреть товары.</p>
-    </div>
-  }
-</main>
