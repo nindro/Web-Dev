@@ -17,10 +17,18 @@ export class AlbumsComponent implements OnInit {
   constructor(private albumService: AlbumService) {}
 
   ngOnInit() {
-    this.albumService.getAlbums().subscribe(data => {
+    console.log('Запрос пошел...');
+  this.albumService.getAlbums().subscribe({
+    next: (data) => {
+      console.log('Данные получены:', data);
       this.albums = data;
       this.loading = false;
-    });
+    },
+    error: (err) => {
+      console.error('Ошибка при загрузке:', err);
+      this.loading = false; // Убираем загрузку, даже если ошибка
+    }
+  });
   }
 
   deleteAlbum(id: number) {
