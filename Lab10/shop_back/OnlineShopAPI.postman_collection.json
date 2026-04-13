@@ -1,0 +1,8 @@
+{
+    "name": "New iPhone",
+    "price": 999.9,
+    "description": "Powerful phone",
+    "count": 10,
+    "is_active": true,
+    "category": 1
+}
